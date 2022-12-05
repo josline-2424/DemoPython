@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <style>
+        label { font-family:verdana; }
+        .center { margin-right:auto; margin-left:auto; }
+    </style>
+</head>
+<body style="background-color:#9400D3;">
+<br><br><br><br><br><br>
+<div style="background-color:#FFC0CB; text-align:center; font-family:verdana; width:45%;" class="center">
+    <form action="register" method="post">
+        {% csrf_token %}
+        <h1><br><br>Registration Form</h1>
+        <pre><label><br>Username:  </label><input type="text" name="username" placeholder="Full name" size="46"><br></pre>
+        <pre><label>First name:  </label><input type="text" name="first_name" placeholder="First name" size="46"><br></pre>
+        <pre><label>Last name:  </label><input type="text" name="last_name" placeholder="Last name" size="46"><br></pre>
+        <pre><label>Email ID: </label><input type="email" name="email" placeholder="example21@gmail.com" size="49"></pre>
+        <pre><label>Enter Password: </label><input name="pwd" type="password" placeholder="Min. 8 characters" size="41"><br></pre>
+        <pre><label>Confirm Password: </label><input name="cpwd" type="password" placeholder="Re-enter password" size="38"><br><br></pre>
+        <pre><br><input type="submit" name="Submit" id="submit" value="Register" style="background-color:#4B0082; color:white; padding:10px; border-color:white;"><br><br><br><br></pre>
+    </form>
+    {% for msg in messages %}
+    <h3>{{msg}}<br><br></h3>
+    {% endfor %}
+</div>
+</body>
+</html>
